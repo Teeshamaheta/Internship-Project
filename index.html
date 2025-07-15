@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew Buzz</title>
+  <meta name="description" content="Welcome to BrewBuzz, your cozy café for the best coffee and snacks.">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-light border-bottom sticky-top shadow-sm">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold text-dark" href="#">BrewBuzz☕</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link active text-dark" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="home.html">About</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+          <a class="nav-link text-dark" href="login.html">Login</a></li>
+          <li class="nav-item">
+          <a class="nav-link text-dark" href="sign-up.html">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Thank You Message -->
+  <div id="thank-you-message" class="text-center py-5 fw-semibold" style="display: none; color: green; font-size: 1.2rem;">
+    ✅ Thank you for visiting us! We’ll get back to you soon 😊<br />
+    <a href="index.html" class="btn btn-outline-dark mt-3">Go Back to Home</a>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <div id="main-content">
+
+    <!-- Eco-Friendly Sticky Background Section -->
+<section id="eco-friendly" class="text-white d-flex align-items-center justify-content-center text-center">
+  <div class="eco-overlay-content px-3">
+    <h2 class="fw-bold display-5">We Care for the Planet 🌍</h2>
+    <p class="lead mt-3">
+      At BrewBuzz, we’re committed to sustainability — from reusable cups to plant-based treats.<br>
+      Every sip supports a greener tomorrow.
+    </p>
+    <a href="visit.html" class="btn btn-outline-light mt-4 px-4 rounded-pill fw-semibold">
+      🌿 Visit Our Café
+    </a>
+  </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4 fw-bold">About BrewBuzz</h2>
+        <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner rounded shadow">
+            <div class="carousel-item active">
+              <img src="https://impeccabuild.com.au/wp-content/uploads/2020/06/Cafe-Interior-Design-Ideas-Coffee-Shop-Interior-Design-Ideas-ImpeccaBuild-5-scaled.jpg" class="d-block w-100" alt="What is BrewBuzz">
+              <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
+                <h5>What is BrewBuzz?</h5>
+                <p>BrewBuzz is more than just coffee — it's a cozy café where every sip sparks joy.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://www.eilegal.com.au/wp-content/uploads/2022/04/Changes-to-Annual-Salary-Provisions-in-Restaurant-and-Hospitality-Awards_Feature-Image.jpg" class="d-block w-100" alt="Hospitality">
+              <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
+                <h5>Hospitality</h5>
+                <p>We believe in warm welcomes and even warmer service.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://www.trycoffee.com/wp-content/uploads/2018/11/Screenshot_1-min.jpg" class="d-block w-100" alt="Amazing Foods">
+              <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
+                <h5>Amazing Foods & Drinks</h5>
+                <p>From croissants to waffles, crafted with care, served with love.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer Banner -->
+    <section class="bg-warning text-dark text-center py-2 shadow-sm">
+      <strong>🔥 Today Only:</strong> Get <span class="text-danger fw-bold">50% OFF</span> on Choco Cold Brew & Choco brownie!
+    </section>
+
+    <!-- Menu Section (Snacks + Drinks with Explore Buttons) -->
+<section id="menu" class="py-5 text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Explore Our Menu</h2>
+    <p class="text-muted mb-5">Choose a category to dive into our delicious offerings</p>
+
+    <div class="row justify-content-center g-4">
+
+      <!-- Snacks Box -->
+      <div class="col-md-5">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://i.pinimg.com/originals/e0/58/b4/e058b4f92ccfa34d9bceb836576e90f2.jpg" class="card-img-top" alt="Snacks">
+          <div class="card-body">
+            <a href="snacks.html" class="btn btn-dark rounded-pill mt-2 px-4">Explore Snacks</a>
+            <p class="card-text">From crispy croissants to gooey brownies — we have it all!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drinks Box -->
+      <div class="col-md-5">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto:eco/https://storage.googleapis.com/gen-atmedia/3/2017/07/a2f0b017f997a658d22182ad6caaed582843960c.jpeg" class="card-img-top" alt="Drinks">
+          <div class="card-body">
+            <a href="drinks.html" class="btn btn-dark rounded-pill mt-2 px-4">Explore Drinks</a>
+            <p class="card-text">Chilled cold brews, creamy coffees, and refreshing coolers await!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Delivery Info Section -->
+<section class="py-4 bg-light text-center border-top">
+  <div class="container">
+    <h5 class="fw-bold mb-2">🚚 Fast Delivery</h5>
+    <p class="mb-1">We deliver hot & fresh food right to your doorstep within <strong>30 minutes</strong>.</p>
+    <p class="mb-0 text-muted">Available daily from 9 AM to 11 PM within city limits.</p>
+  </div>
+</section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-4">Contact Us</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form id="contactForm" name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact" />
+              <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your email" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer-custom text-white py-3 bg-dark">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+          <p class="mb-0 small">&copy; 2025 BrewBuzz Café. Designed & Developed by <strong>Teesha Maheta</strong>🧋🌷</p>
+          <div class="d-flex align-items-center gap-3">
+            <span>Follow us:</span>
+            <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Netlify Static Fallback Form (IMPORTANT!) -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
+
+  <!-- Scripts -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const thankYou = document.getElementById("thank-you-message");
+    const mainContent = document.getElementById("main-content");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        form.reset();
+        mainContent.style.display = "none";
+        thankYou.style.display = "block";
+      })
+      .catch(() => alert("Oops! Something went wrong."));
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place Order | BrewBuzz</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #f8caca, #a06f6f);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #thankYouMsg {
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-light border-bottom sticky-top shadow-sm">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold text-dark" href="#">BrewBuzz ☕</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="menu.html">Menu</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Thank You Message -->
+  <div id="thankYouMsg" class="text-center py-5 fw-semibold text-success" style="display: none;">
+    ✅ Thank you for your order! We'll start preparing it right away.😊🚚<br>
+    <a href="menu.html" class="btn btn-outline-dark mt-3">Return to Home</a>
+  </div>
+
+  <!-- Order Form Section -->
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;" id="orderFormWrapper">
+    <div class="w-100" style="max-width: 800px;">
+      <h2 class="text-center fw-bold mb-4">Place Your Order</h2>
+
+      <form name="order" method="POST" data-netlify="true" id="orderForm">
+        <input type="hidden" name="form-name" value="order" />
+
+        <div class="mb-3">
+          <label class="form-label">Selected Item</label>
+          <input type="text" class="form-control" name="selectedItem" id="selectedItem" readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Your name" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">Delivery Address</label>
+          <textarea class="form-control" name="address" rows="3" placeholder="Your house address" required></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-dark px-4">Place Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Autofill selected item from URL
+    const params = new URLSearchParams(window.location.search);
+    const selectedItem = params.get("item");
+    if (selectedItem) {
+      document.getElementById("selectedItem").value = selectedItem;
+    }
+
+    // Form and thank-you logic
+    const form = document.getElementById("orderForm");
+    const wrapper = document.getElementById("orderFormWrapper");
+    const thankYou = document.getElementById("thankYouMsg");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // stop default refresh
+      const formData = new FormData(form);
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        form.reset();
+        wrapper.style.display = "none";
+        thankYou.style.display = "block";
+      })
+      .catch(() => alert("Oops! Something went wrong."));
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
